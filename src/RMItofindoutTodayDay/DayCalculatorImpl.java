@@ -14,6 +14,35 @@ public class DayCalculatorImpl extends UnicastRemoteObject implements DayCalcula
     public String getCurrentDay() throws RemoteException {
         LocalDate today = LocalDate.now();
         DayOfWeek dayOfWeek = today.getDayOfWeek();
-        return dayOfWeek.toString();
+        String dayName;
+        switch (dayOfWeek) {
+            case MONDAY:
+                dayName = "Monday";
+                break;
+            case TUESDAY:
+                dayName = "Tuesday";
+                break;
+            case WEDNESDAY:
+                dayName = "Wednesday";
+                break;
+            case THURSDAY:
+                dayName = "Thursday";
+                break;
+            case FRIDAY:
+                dayName = "Friday";
+                break;
+            case SATURDAY:
+                dayName = "Saturday";
+                break;
+            case SUNDAY:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Unknown";
+                break;
+        }
+
+        return dayName;
+//        return dayOfWeek.toString();
     }
 }
